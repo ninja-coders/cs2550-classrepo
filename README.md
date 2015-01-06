@@ -1,11 +1,11 @@
 CS 2550 - Web Development
 ================================================
 
-Michael Wright
-Office: Google Hangout
-Phone: 801-753-8157
-Email: micwrigh@uvu.edu
-Office Hours: By Appointment
+Michael Wright   
+Office: Google Hangout   
+Phone: 801-753-8157   
+Email: micwrigh@uvu.edu   
+Office Hours: By Appointment   
 
 ## Course Objectives
 
