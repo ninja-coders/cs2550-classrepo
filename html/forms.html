@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Sample</title>
+</head>
+<body>
+  <h1>Form</h1>
+
+  <details>
+    <summary>Sum</summary>
+    Hello
+  </details>
+
+  <form method="POST" action="http://requestb.in/o58glbo5">
+    <fieldset>
+      <legend>Login Info</legend>
+      <fieldset>
+        <legend>Inner</legend>
+    <div>
+      <label>Name</label>
+      <input type="text" id="name" name="name" placeholder="Mike" />
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name="password" />
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="email" name="email"k />
+    </div>
+  </fieldset>
+  </fieldset>
+
+    <div>
+      <label>Favorite Color</label>
+      <input type="color" name="favcolor" />
+    </div>
+    <div>
+      <label>Calendar</label>
+      <input type="date" name="Cal" />
+    </div>
+    <div>
+      <label>Search</label>
+      <input type="search" name="search" />
+    </div>
+    <div>
+      <label>Age</label>
+      <input type="number" name="age" />
+    </div>
+    <div>
+      <label>Description</label>
+      <textarea name="desc"></textarea>
+    </div>
+    <div>
+      <label>Selection</label>
+      <input min="0" max="10" type="range" id="range" name="minmax" onchange="rangeChange()"/>
+    </div>
+    <div>
+      <select name="city">
+        <option value="SS">Saratoga</option>
+        <option value="AF">American Fork</option>
+      </select>
+    </div>
+    <div>
+      <input type="checkbox" name="yes" id="yesbox" />
+      <label for="yesbox">Yes</label>
+    </div>
+
+    <input type="submit" />
+
+    <!--
+
+    <table>
+      <tr>
+        <td>
+         <label>Name</label>
+       </td>
+       <td>
+        <input type="text" id="name" name="name" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <label>Password</label>
+  </td>
+    <td>
+    <input type="password" name="password" />
+  </td>
+</tr>
+  </table>
+
+    <input type="submit" />
+-->
+
+  </form>
+
+  <progress value="50" max="100"></progress>
+  <meter id="meter" min="0" max="10" low="3" high="8" optimum="5" value="8"></meter>
+  <script type="text/javascript">
+    function rangeChange() {
+      document.getElementById('meter').value = document.getElementById('range').value;
+    }
+
+  </script>
+
+</body>
+</html>

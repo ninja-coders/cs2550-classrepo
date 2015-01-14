@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Registration</title>
+</head>
+<body>
+  <h1>Signup for an Account</h1>
+  <form action="http://requestb.in/o58glbo5" method="POST" >
+    <fieldset>
+      <legend>Login</legend>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div><label for="pass-confirm" >Confirm</label>
+        <input type="password" name="pass-confirm" id="pass-confirm" required>
+        </div>
+    </fieldset>
+    <fieldset>
+      <legend>Address</legend>
+      <div><label for="address1">Address</label><input type="text" name="address1" id="address1" required></div>
+      <div><label for="address2">Address 2</label><input type="text" name="address2" id="address2"></div>
+      <div>
+        <label for="city">City</label><input type="text" name="city" id="city" required>
+        <label for="state">State</label>
+        <select name="state" id="state">
+          <option value="UT">UT</option>
+          <option value="ID">ID</option>
+          <option value="CA">CA</option>
+          <option value="WY">WY</option>
+          <option value="MT">MT</option>
+        </select>
+        <label for="zip">Zip</label><input type="text" name="zip" id="zip" required>
+      </div>
+      <div><label for="phone">Phone</label><input type="tel" name="phone" id="phone"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Preferences</legend>
+      <div>
+        <label for="homepage">HomePage</label>
+        <input type="url" name="homepage" id="homepage" />
+      </div>
+      <div>
+        <label for="color">Fav Color</label>
+        <input type="color" name="color" id="color" />
+      </div>
+      <br />
+      <fieldset>
+        <legend>Contact Preference</legend>
+        <div>
+          <input type="checkbox" name="contact-email" id="contact-email">
+          <label>Email</label>
+        </div>
+        <div>
+          <input type="checkbox" name="contact-phone" id="contact-phone">
+          <label>Phone</label>
+        </div>
+        <div>
+          <input type="checkbox" name="contact-mail" id="contact-mail">
+          <label>Mail</label>
+        </div>
+      </fieldset>
+      <div>
+        <label>Work Schedule</label>
+        <table>
+          <th>
+            <td>S</td>
+            <td>M</td>
+            <td>T</td>
+            <td>W</td>
+            <td>Th</td>
+            <td>F</td>
+            <td>Sa</td>
+          </th>
+          <tr>
+            <td>Work</td>
+            <td><input type="checkbox" name="wss" /></td>
+            <td><input type="checkbox" name="wsm" /></td>
+            <td><input type="checkbox" name="wst" /></td>
+            <td><input type="checkbox" name="wsw" /></td>
+            <td><input type="checkbox" name="wsth" /></td>
+            <td><input type="checkbox" name="wsf" /></td>
+            <td><input type="checkbox" name="wssa" /></td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+    <input type="submit" />
+  </form>
+
+</body>
+</html>
