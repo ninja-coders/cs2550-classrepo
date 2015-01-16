@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello CSS</title>
+  <style>
+    div h1 {
+      color: blue;
+    }
+    div div h1 {
+      color: green;
+    }
+    h1[rel] {
+      color: gray;
+    }
+    #greenparent div h1 {
+      display: none;
+    }
+    .maindiv {
+      padding-top: 100px;
+    }
+    .maindiv#greenparent {
+      padding-top: 25px;
+    }
+
+    a {
+      color: black;
+    }
+    a[href] {
+      color: blue;
+    }
+    a[href*="google"] {
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="https://google.com">Google HTTPS</a>
+  <a href="http://google.com">Google HTTP</a>
+  <a href="google.com">Google only</a>
+  <a>Nowhere</a>
+  <h1 rel="blah">Welcome CSS</h1>
+
+  <div class="maindiv">
+    <h1>Other in Div</h1>
+  </div>
+
+  <div id="greenparent" class="maindiv">
+    <div>
+      <h2>Upper</h2>
+    </div>
+    <div>
+      <h1>Green</h1>
+    </div>
+    <div>
+      <h2>Lower</h2>
+    </div>
+  </div>
+</body>
+</html>
