@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo</title>
+
+  <style>
+
+    #todoContainer {
+      padding-left: 20px;    
+    }
+
+    label {
+      display: inline-block;
+      width: 50px;
+    }
+
+    input[type="submit"] {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="todoForm">
+    <div><label for="todoName">Name:</label><input type="text" id="todoName"></div>
+    <div><label for="todoDesc">Desc:</label><input type="text" id="todoDesc"></div>
+    <input type="submit">
+  </form>
+
+  <hr />
+
+  <div id="todoContainer">
+    <h1>Tasks</h1>
+    <div id="todoList">
+      <input type="checkbox">Sample Task</input>
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+
+</body>
+</html>
