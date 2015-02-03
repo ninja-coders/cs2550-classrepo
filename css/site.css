@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  padding-left: 200px;
+  background-color: #080828;
+  padding-top: 20px;
+}
+.navbar a {
+  color: white;
+  font-size: 18pt;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.activepage {
+  text-decoration: none !important;
+  color: #A8A8D8 !important;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
