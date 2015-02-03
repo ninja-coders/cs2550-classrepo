@@ -3,14 +3,18 @@ body {
   padding: 0;
 }
 
-.navbar {
+header.navbar {
   width: 100%;
   height: 50px;
-  padding-left: 200px;
   background-color: #080828;
-  padding-top: 20px;
 }
-.navbar a {
+nav.navbar {
+  width: 1024px;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+nav.navbar a {
   color: white;
   font-size: 18pt;
   padding-left: 10px;
@@ -22,6 +26,30 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1024px;
   margin: auto;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1 {
+
+}
+h1:after {
+  padding-top: 5px;
+  content: ' ';
+  display: block;
+  border-bottom: 1px solid black;
+}
+.gametitle {
+  font-style: italic;
+}
+
+article {
+  font-size: 15pt;
+}
+
+article div {
+  padding-bottom: 20px;
 }
