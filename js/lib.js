@@ -8,6 +8,14 @@ var _cs2550_lib = (function() {
         return this.replace(/^\s+|\s+$/g, '');
       }
     }
+
+    if (typeof HTMLCollection.prototype.forEach === 'undefined') {
+      HTMLCollection.prototype.forEach = function(func) {
+        for (var i = 0; i < this.length; ++i) {
+          func(this[i]);
+        }
+      }
+    }
   }
 
   function generateLib() {
@@ -25,11 +33,11 @@ var _cs2550_lib = (function() {
       }
 
       function assignText(i) {
-        if (i.innerText) {
+        if (typeof i.innerText === "string") {
           i.innerText = msg;
-        } else if (i.textContent) {
+        } else if (typeof i.textContent === "string") {
           i.textContext = msg;
-        } else if (i.value) {
+        } else if (typeof i.value === "string") {
           i.value = msg;
         } else {
           console.warn('Attempted to write text to element that does not support it');
@@ -37,9 +45,7 @@ var _cs2550_lib = (function() {
       }
 
       if (this.isArray) {
-        for (var i = 0; i < this.item.length; ++i) {
-          assignText(this.item[i]);
-        }
+        this.item.forEach(assignText);
       } else {
         assignText(this.item);
       }
@@ -55,6 +61,26 @@ var _cs2550_lib = (function() {
       } else {
         window.onload = func;
       }
+    };
+    Library.prototype.unload = function(func) {
+      if (window.onunload) {
+        var original = window.onunload;
+        window.onunload = function() {
+          var result = original();
+          if (typeof result !== "undefined" && !result) {
+            return result;
+          }
+          result = func();
+          if (typeof result !== "undefined" && !result) {
+            return result;
+          }
+        };
+      } else {
+        window.onunload = func;
+      }
+    };
+    Library.prototype.leave = function(func) {
+      window.onbeforeunload = func;
     };
 
     var lib = function(arg) {
