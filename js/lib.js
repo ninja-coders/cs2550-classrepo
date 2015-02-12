@@ -25,6 +25,12 @@ var _cs2550_lib = (function() {
       }
       this.item = item;
       this.isArray = item instanceof Array || item instanceof HTMLCollection;
+      this.leaveMessage = undefined;
+      var self = this;
+
+      window.onbeforeunload = function() {
+        return self.leaveMessage;
+      }
     }
     Library.prototype.setText = function(msg) {
       if (typeof msg !== "string") {
@@ -79,9 +85,27 @@ var _cs2550_lib = (function() {
         window.onunload = func;
       }
     };
-    Library.prototype.leave = function(func) {
-      window.onbeforeunload = func;
-    };
+    Library.prototype.confirmLeave = function(msg) {
+      this.leaveMessage = msg || "Are you sure?";
+    }
+    Library.prototype.click = function(func) {
+      function applyOnClick(i) {
+        if (i.onclick) {
+          var original = i.onclick;
+          i.onclick = function() {
+            return original() || func();
+          }
+        } else {
+          i.onclick = func;
+        }
+      }
+
+      if (this.isArray) {
+        this.item.forEach(applyOnClick);
+      } else {
+        applyOnClick(this.item);
+      }
+    }
 
     var lib = function(arg) {
       if (typeof arg === "undefined") {

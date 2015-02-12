@@ -22,23 +22,7 @@
   <footer>
   </footer>
 
-  <script>
-    function openChat() {
-      window.chatWindow = window.open('play.html', 'chatwindow', 'height=200,width=300,resizable=false');
-      $('startChat').setText('close');
-      $('startChat').item.onclick = closeChat;
-    }
-
-    function closeChat() {
-      window.chatWindow.close();
-      $('startChat').setText('open');
-      $('startChat').item.onclick = openChat;
-    }
-
-    $().ready(function() {
-      $('startChat').item.onclick = openChat;
-    });
-  </script>
+  <script src="js/gamePage.js"></script>
 
 </body>
 </html>
