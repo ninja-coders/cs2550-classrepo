@@ -113,11 +113,12 @@ var _cs2550_lib = (function() {
       } else if (typeof arg !== "string") {
         return new Library(arg);
       } else {
-        if (arg.indexOf('.') == 0) {
-          return new Library(document.getElementsByClassName(arg.substring(1)));
-        } else {
-          return new Library(document.getElementById(arg));
+        var elements = document.querySelectorAll(arg);
+        if (elements.length === 0) {
+          elements = document.getElementById(arg);
         }
+
+        return new Library(elements);
       }
     };
     return lib;

@@ -5,6 +5,11 @@ function Chat(name) {
   this.messages = [];
 }
 
-Chat.prototype.startChat = function(otherClient) {
 
-}
+$().ready(function() {
+  if (window) {
+    window.onmessage = function(newMessage) {
+      console.log(newMessage);
+    };
+  }
+});
