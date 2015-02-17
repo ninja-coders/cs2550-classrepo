@@ -2,6 +2,25 @@
 
 var GameView = (function() {
   function GameView() {
+  };
+
+  GameView.prototype.$init = function() {
+    this.$$gameBoard = $('.gameBoard');
+
+  };
+
+  GameView.prototype.$render = function() {
+
+  };
+
+  return GameView;
+})();
+
+
+'use strict';
+
+var GameView = (function() {
+  function GameView() {
     this.$$board = $('gameBoard');
   }
 

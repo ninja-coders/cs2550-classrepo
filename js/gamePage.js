@@ -42,6 +42,10 @@ function closeChatWindow() {
   $('startChat').click(openChatWindow);
 }
 
+var gameController;
 $().ready(function() {
   $('startChat').click(openChatWindow);
+
+  gameController = new GameController();
+  gameController.$init();
 });
