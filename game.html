@@ -5,6 +5,23 @@
   <title>ZÈRTZ</title>
   <link rel="stylesheet" href="css/site.css">
   <script src="js/lib.js"></script>
+  <script src="js/gameView.js"></script>
+  <script src="js/gameModel.js"></script>
+  <script src="js/gameController.js"></script>
+
+  <style>
+    .whiteTile {
+      background-color: white;
+      width: 20px;
+      height: 20px;
+    }
+
+    .blackTile {
+      background-color: black;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -19,12 +36,21 @@
     <button id="startChat">Chat</button>
   </div>
 
+  <div id="gameBoard">
+  </div>
+
+  <button id="increase">Increase</button>
+
   <div id="chatDiv" class="activepage"></div>
 
   <footer>
   </footer>
 
   <script src="js/gamePage.js"></script>
+
+  <script>
+   
+  </script>
 
 </body>
 </html>
