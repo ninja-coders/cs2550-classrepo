@@ -7,12 +7,17 @@ var GameView = (function() {
 
   GameView.prototype.render = function(board) {
     var boardHtml = "<table>";
+    var count = board.length;
+    var style = window.getComputedStyle(this.$$board);
+    var size = parseInt(style.width) / count;
+    console.log(size);
+
     for (var i = 0; i < board.length; ++i) {
       boardHtml += "<tr>";
       var col = board[i];
       for (var j = 0; j < col.length; ++j) {
         var className = col[j] === 'B' ? 'blackTile' : 'whiteTile';
-        boardHtml += "<td class='" + className + "'></td>";
+        boardHtml += "<td class='" + className + "' style='height: " + size + "px; width: " + size + "px;'></td>";
       }
       boardHtml += "</tr>";
     }

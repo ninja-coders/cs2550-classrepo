@@ -3,28 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>ZÈRTZ</title>
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/chat.css">
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="js/lib.js"></script>
-  <script src="js/zertzView.js"></script>
-  <script src="js/zertzModel.js"></script>
-  <script src="js/zertzController.js"></script>
-  <script src="js/chat.js"></script>
+  <link id="siteCss" rel="stylesheet" href="css/site.css">
+  <link id="chatCss" rel="stylesheet" href="css/chat.css">
+  <link id="gameNormalCss" rel="stylesheet" href="css/game.css">
+  <link id="gameCheckersCss" rel="stylesheet" href="css/gameCheckers.css" disabled>
+  <link id="gameSmallerCss" rel="stylesheet" href="css/gameSmaller.css" disabled>
 
   <style>
-    .whiteTile {
-      background-color: white;
-      width: 20px;
-      height: 20px;
-    }
-
-    .blackTile {
-      background-color: black;
-      width: 20px;
-      height: 20px;
-    }
-  </style>
+      </style>
 </head>
 <body>
   <header class="navbar">
@@ -36,13 +22,12 @@
   </header>
 
   <div class="container">
-    <button id="startChat">Chat</button>
+    <div class="gameWindow">
+      <div id="gameBoard">
+      </div>
+      <button id="increase">Increase</button>
+    </div>
   </div>
-
-  <div id="gameBoard">
-  </div>
-
-  <button id="increase">Increase</button>
 
   <div id="chatWindow">
     <div class="chatEntry">
@@ -61,15 +46,17 @@
 
   </div>
 
-  <footer class='statusbar'>
+  <footer class="statusbar">
     <button id="chatToggle">Chat</button>
   </footer>
 
-  <script src="js/gamePage.js"></script>
 
-  <script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/lib.js"></script>
 
-  </script>
-
+  <script src="js/zertzView.js"></script>
+  <script src="js/zertzModel.js"></script>
+  <script src="js/zertzController.js"></script>
+  <script src="js/chat.js"></script>
 </body>
 </html>

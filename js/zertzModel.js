@@ -2,7 +2,7 @@
 
 var GameModel = (function() {
   function GameModel() {
-    this.$$boardSize = 5;
+    this.$$boardSize = 8;
   };
 
   GameModel.prototype.$$generateInitialBoard = function() {

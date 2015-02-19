@@ -1,7 +1,8 @@
 'use strict';
 
 // This is to create a shim for the code if the io service doesn't exist
-if (!io) {
+if (typeof io === 'undefined') {
+  console.warn('Chat IO not found, chat functionality will not work');
   window.io = { connect: function() {
     return {
       emit: function() { },
