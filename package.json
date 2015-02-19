@@ -1,0 +1,24 @@
+{
+  "name": "cs2550",
+  "version": "1.0.0",
+  "description": "Code for cs2550 Web Dev class",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ninja-coders/cs2550-classrepo.git"
+  },
+  "author": "Michael Wright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ninja-coders/cs2550-classrepo/issues"
+  },
+  "homepage": "https://github.com/ninja-coders/cs2550-classrepo",
+  "dependencies": {
+    "express": "^4.11.2",
+    "socket.io": "^1.3.4"
+  }
+}

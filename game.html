@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <title>ZÈRTZ</title>
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/chat.css">
+  <script src="/socket.io/socket.io.js"></script>
   <script src="js/lib.js"></script>
-  <script src="js/gameView.js"></script>
-  <script src="js/gameModel.js"></script>
-  <script src="js/gameController.js"></script>
+  <script src="js/zertzView.js"></script>
+  <script src="js/zertzModel.js"></script>
+  <script src="js/zertzController.js"></script>
+  <script src="js/chat.js"></script>
 
   <style>
     .whiteTile {
@@ -41,15 +44,31 @@
 
   <button id="increase">Increase</button>
 
-  <div id="chatDiv" class="activepage"></div>
+  <div id="chatWindow">
+    <div class="chatEntry">
+      <input type="text" id="username"></input>
+      <button id="chatConnect">Connect</button>
+    </div>
 
-  <footer>
+    <div id="chatMessages">
+
+    </div>
+
+    <div class="chatEntry">
+      <input type="text" id="newMessage"></input>
+      <button id="sendMessage" disabled>Send</button>
+    </div>
+
+  </div>
+
+  <footer class='statusbar'>
+    <button id="chatToggle">Chat</button>
   </footer>
 
   <script src="js/gamePage.js"></script>
 
   <script>
-   
+
   </script>
 
 </body>

@@ -19,106 +19,94 @@ var _cs2550_lib = (function() {
   }
 
   function generateLib() {
-    function Library(item) {
-      if (typeof item === "undefined") {
-        item = document;
-      }
-      this.item = item;
-      this.isArray = item instanceof Array || item instanceof HTMLCollection;
-      this.leaveMessage = undefined;
-      var self = this;
-
-      window.onbeforeunload = function() {
-        return self.leaveMessage;
-      }
-    }
-    Library.prototype.setText = function(msg) {
-      if (typeof msg !== "string") {
-        console.warn('Trying to use setText without string');
-        return;
+    function extendObject(obj) {
+      if (typeof obj === "undefined") {
+        obj = document;
       }
 
-      function assignText(i) {
-        if (typeof i.innerText === "string") {
-          i.innerText = msg;
-        } else if (typeof i.textContent === "string") {
-          i.textContext = msg;
-        } else if (typeof i.value === "string") {
-          i.value = msg;
-        } else {
-          console.warn('Attempted to write text to element that does not support it');
+      obj.isArray = obj instanceof Array || obj instanceof HTMLCollection;
+
+      if (!obj.setText) {
+        obj.setText = function(msg) {
+
+          if (typeof msg !== "string") {
+            console.warn('Trying to use setText without string');
+            return;
+          }
+
+          function assignText(i) {
+            if (typeof i.innerText === "string") {
+              i.innerText = msg;
+            } else if (typeof i.textContent === "string") {
+              i.textContext = msg;
+            } else if (typeof i.value === "string") {
+              i.value = msg;
+            } else {
+              console.warn('Attempted to write text to element that does not support it');
+            }
+          }
+
+          if (obj.isArray) {
+            obj.forEach(assignText);
+          } else {
+            assignText(obj);
+          }
         }
       }
 
-      if (this.isArray) {
-        this.item.forEach(assignText);
-      } else {
-        assignText(this.item);
-      }
-    };
-
-    Library.prototype.ready = function(func) {
-      if (window.onload) {
-        var original = window.onload;
-        window.onload = function() {
-          original();
-          func();
-        }
-      } else {
-        window.onload = func;
-      }
-    };
-    Library.prototype.unload = function(func) {
-      if (window.onunload) {
-        var original = window.onunload;
-        window.onunload = function() {
-          var result = original();
-          if (typeof result !== "undefined" && !result) {
-            return result;
+      if (!obj.ready) {
+        obj.ready = function(func) {
+          if (document.readyState === "complete") {
+            func();
+          } else if (window.onload) {
+            var original = window.onload;
+            window.onload = function() {
+              original();
+              func();
+            }
+          } else {
+            window.onload = func;
           }
-          result = func();
-          if (typeof result !== "undefined" && !result) {
-            return result;
-          }
-        };
-      } else {
-        window.onunload = func;
-      }
-    };
-    Library.prototype.confirmLeave = function(msg) {
-      this.leaveMessage = msg || "Are you sure?";
-    }
-    Library.prototype.click = function(func) {
-      function applyOnClick(i) {
-        if (i.onclick) {
-          var original = i.onclick;
-          i.onclick = function() {
-            return original() || func();
-          }
-        } else {
-          i.onclick = func;
         }
       }
 
-      if (this.isArray) {
-        this.item.forEach(applyOnClick);
-      } else {
-        applyOnClick(this.item);
+      if (!obj.addClick) {
+        obj.addClick = function(func) {
+
+          function applyOnClick(i) {
+            if (i.onclick) {
+              var original = i.onclick;
+              i.onclick = function() {
+                return original() || func();
+              }
+            } else {
+              i.onclick = func;
+            }
+          }
+
+          if (obj.isArray) {
+            obj.forEach(applyOnClick);
+          } else {
+            applyOnClick(obj);
+          }
+        }
       }
-    }
+
+      return obj;
+    };
 
     var lib = function(arg) {
       if (typeof arg === "undefined") {
-        return new Library();
+        return extendObject(document);
       } else if (typeof arg !== "string") {
-        return new Library(arg);
+        return extendObject(arg);
       } else {
         var elements = document.querySelectorAll(arg);
         if (elements.length === 0) {
           elements = document.getElementById(arg);
         }
 
-        return new Library(elements);
+        return extendObject(elements);
       }
     };
     return lib;

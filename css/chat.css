@@ -1,10 +1,13 @@
 #chatWindow {
-  display: block;
-  height: 200px;
-  width: 200px;
-  background-color: white;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 300px;
+  width: 250px;
+  background-color: #F9F9FF;
   border: 1px solid black;
-  margin: 20px auto 20px auto;
+  margin: 20px auto 25px auto;
 }
 
 .message {
@@ -14,4 +17,23 @@
 
 .messageBox {
   padding-right: 22px;
+}
+
+#chatMessages {
+  overflow-y: auto;
+  height: 200px;
+  width: 200px;
+  margin: auto ;
+  background-color: white;
+  border: 1px dashed black;
+}
+
+.chatEntry {
+  padding: 20px 0 10px 25px;
+}
+
+#chatToggle {
+  float: right;
+  margin-top: 5px;
+  margin-right: 250px;
 }

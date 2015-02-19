@@ -2,25 +2,6 @@
 
 var GameView = (function() {
   function GameView() {
-  };
-
-  GameView.prototype.$init = function() {
-    this.$$gameBoard = $('.gameBoard');
-
-  };
-
-  GameView.prototype.$render = function() {
-
-  };
-
-  return GameView;
-})();
-
-
-'use strict';
-
-var GameView = (function() {
-  function GameView() {
     this.$$board = $('gameBoard');
   }
 
@@ -36,7 +17,7 @@ var GameView = (function() {
       boardHtml += "</tr>";
     }
     boardHtml += "</table>";
-    this.$$board.item.innerHTML = boardHtml;
+    this.$$board.innerHTML = boardHtml;
   };
 
   return GameView;
@@ -47,7 +28,7 @@ $().ready(function() {
 
   controller.init();
 
-  $('increase').item.onclick = function() {
+  $('increase').onclick = function() {
     controller.increaseSize();
   };
 });
