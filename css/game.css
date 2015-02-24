@@ -12,7 +12,8 @@
   margin: auto;
 }
 
-.gameBoard {
+#gameBoard {
   width: 100%;
   margin: auto;
+  border: black 1px solid;
 }
