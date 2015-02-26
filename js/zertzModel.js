@@ -26,7 +26,11 @@ var GameModel = (function() {
   GameModel.prototype.increase = function() {
     this.$$boardSize++;
     this.$$generateInitialBoard();
-  }
+  };
+
+  GameModel.prototype.canSelect = function(x,y) {
+    return ((x + y) % 2) !== 0;
+  };
 
   return GameModel;
 })();

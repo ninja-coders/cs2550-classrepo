@@ -8,6 +8,18 @@ var GameController = (function() {
 
   GameController.prototype.init = function() {
     this.$$updateView();
+
+    var self = this;
+    this.$$view.addEventListener('cellselected', function(x,y) { self.$$cellSelected(x,y); });
+  };
+
+  GameController.prototype.$$cellSelected = function(x,y) {
+    if (this.$$model.canSelect(x,y)) {
+      console.log('Can select');
+      this.$$view.highlightCell(x, y);
+    } else {
+      console.log('Bu keye');
+    }
   };
 
   GameController.prototype.$$updateView = function() {

@@ -1,9 +1,16 @@
 .whiteTile {
   background-color: white;
+  border: white solid 1px;
 }
 
 .blackTile {
   background-color: black;
+  border: black solid 1px;
+}
+
+.selectedTile {
+  border: blue solid 1px;
+  background-color: yellow;
 }
 
 .gameWindow {

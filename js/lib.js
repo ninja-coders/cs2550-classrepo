@@ -58,14 +58,12 @@ var _cs2550_lib = (function() {
         obj.ready = function(func) {
           if (document.readyState === "complete") {
             func();
-          } else if (window.onload) {
-            var original = window.onload;
-            window.onload = function() {
-              original();
-              func();
-            }
           } else {
-            window.onload = func;
+            window.addEventListener('load', func);
+          }
+
+          return function() {
+            window.removeEventListener('load', func);
           }
         }
       }
@@ -74,14 +72,7 @@ var _cs2550_lib = (function() {
         obj.addClick = function(func) {
 
           function applyOnClick(i) {
-            if (i.onclick) {
-              var original = i.onclick;
-              i.onclick = function() {
-                return original() || func();
-              }
-            } else {
-              i.onclick = func;
-            }
+            i.addEventListener('click', func);
           }
 
           if (obj.isArray) {
