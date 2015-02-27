@@ -11,6 +11,15 @@ var GameController = (function() {
 
     var self = this;
     this.$$view.addEventListener('cellselected', function(x,y) { self.$$cellSelected(x,y); });
+    this.$$view.addEventListener('piecemoved', function(startx, starty, x, y) {
+      console.log('startx: ' + startx + ' starty: ' + starty + ' x: ' + x + ' y: ' + y);
+      self.$$pieceMoved(startx, starty, x, y);
+    });
+  };
+
+  GameController.prototype.$$pieceMoved = function(sx, sy, x, y) {
+    this.$$model.movePiece(sx, sy, x, y);
+    this.$$updateView();
   };
 
   GameController.prototype.$$cellSelected = function(x,y) {

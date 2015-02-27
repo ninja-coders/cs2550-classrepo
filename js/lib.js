@@ -83,8 +83,42 @@ var _cs2550_lib = (function() {
         }
       }
 
+      if (obj.className) {
+        obj.$$classList = obj.className.split(' ');
+      } else {
+        obj.$$classList = [];
+      }
+
+      function applyClassNames() {
+        var classNameStr = "";
+        //for (var i = 0; i < obj.$$classList.length; ++i)
+        obj.$$classList.forEach(function(className) {
+          classNameStr += className + " ";
+        });
+        obj.className = classNameStr;
+      }
+
+      if (!obj.addClass) {
+        obj.addClass = function(className) {
+          obj.$$classList.push(className);
+          applyClassNames();
+        };
+      }
+
+      if (!obj.removeClass) {
+        obj.removeClass = function(className) {
+          var index = obj.$$classList.indexOf(className);
+          if (index >= 0) {
+            obj.$$classList.splice(index, 1);
+            applyClassNames();
+          }
+        };
+      }
+
       return obj;
     };
+
+
 
     var lib = function(arg) {
       if (typeof arg === "undefined") {
