@@ -6,10 +6,23 @@ var GameView = (function() {
     this.$$cellSelectedEventHandlers = [];
     this.$$pieceMovedEventHandlers = [];
     this.$$boardCells = [];
+    this.$$yodaDiv = $('yodaResponse');
+    this.$$apiService = new ApiService();
+    this.$$message = [
+      'Hello, how are you?',
+      'I am doing so well, are you?',
+      'What is going on?',
+      'Why would you do this?',
+      'Does anyone really like the new star wars?',
+      'This is fun right?',
+      'Do you like red?',
+      'Is this it?'
+    ]
   }
   function createOriginalLoc(x,y) {
     return {x: x, y: y};
   }
+
 
   GameView.prototype.addEventListener = function(event, func) {
     if (event === 'cellselected') {
@@ -59,6 +72,7 @@ var GameView = (function() {
   };
 
   GameView.prototype.render = function(board) {
+
     this.$$boardCells = [];
     var boardTable = document.createElement('table');
     var count = board.length;
@@ -83,6 +97,10 @@ var GameView = (function() {
         boardRow.appendChild(boardCell);
 
         if (col[j].indexOf('M') > 0) {
+          var self = this;
+          this.$$apiService.yodaText(this.$$message[i], function(text) {
+            self.$$yodaDiv.innerText = text;
+          });
           // Have a marble attach here
           this.$$pieceImg = document.createElement('img');
           this.$$pieceImg.src = 'img/gray-marble.png';

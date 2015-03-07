@@ -21,6 +21,11 @@ app.get('/', function(req, res) {
   res.redirect('/overview.html');
 });
 
+app.get('/test', function(req, rest) {
+
+  res.end();
+});
+
 app.use(express.static(__dirname));
 
 server.listen(3000, function() {
