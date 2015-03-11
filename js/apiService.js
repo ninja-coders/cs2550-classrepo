@@ -1,15 +1,17 @@
 'use strict';
 
 var ApiService = (function() {
-  var AUTHORIZATION_KEY = 'ADD KEY HERE';
+  var AUTHORIZATION_KEY = 'eTreqSHAtSmshy4IXKHp2klOs1s4p11YAJejsnXd1WH5L0L27l';
   var YODA_ENDPOINT = 'https://yoda.p.mashape.com/yoda?sentence=';
   var WEATHER_ENDPOINT = 'https://george-vustrey-weather.p.mashape.com/api.php?location=';
 
   function ApiService() {
-
+    this.$$store = new StorageService('api');
+    this.$$store.$$init();
   }
 
-  ApiService.prototype.$$createRequest = function(success, error) {
+  ApiService.prototype.$$createRequest = function(success, error, key) {
+    var self = this;
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (request.readyState !== 4) {
@@ -18,6 +20,7 @@ var ApiService = (function() {
 
       if (request.status >= 200 && request.status < 300) {
         if (success) {
+          self.$$store.setItem(key, request.responseText);
           success(request.responseText);
         } else {
           console.log(request.responseText);
@@ -34,11 +37,16 @@ var ApiService = (function() {
   };
 
   ApiService.prototype.yodaText = function(sentence, successCallback) {
-    var request = this.$$createRequest(successCallback);
-    request.open('GET', YODA_ENDPOINT + window.encodeURI(sentence));
-    request.setRequestHeader('Accept', 'text/plain');
-    request.setRequestHeader('X-Mashape-Key', AUTHORIZATION_KEY);
-    request.send();
+    if (this.$$store.exists(sentence)) {
+      successCallback(this.$$store.getItem(sentence));
+      return;
+    } else {
+      var request = this.$$createRequest(successCallback, undefined, sentence);
+      request.open('GET', YODA_ENDPOINT + window.encodeURI(sentence));
+      request.setRequestHeader('Accept', 'text/plain');
+      request.setRequestHeader('X-Mashape-Key', AUTHORIZATION_KEY);
+      request.send();
+    }
   };
 
   ApiService.prototype.weatherService = function(location, successCallback, errorCallback) {

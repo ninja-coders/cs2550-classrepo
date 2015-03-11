@@ -1,9 +1,17 @@
 'use strict';
 
 var GameModel = (function() {
+  var MODEL_SPACE = 'gameModel';
+
   function GameModel() {
-    this.$$boardSize = 8;
-    this.$$piece = {x: 2, y: 2};
+    this.$$init();
+  };
+
+  GameModel.prototype.$$init = function() {
+    this.$$store = new StorageService(MODEL_SPACE);
+    this.$$store.init();
+    this.$$boardSize = this.$$store.getItem('boardSize') || 8;
+    this.$$piece = this.$$store.getItem('pieces') || {x: 2, y: 2};
   };
 
   GameModel.prototype.$$generateInitialBoard = function() {
@@ -22,6 +30,7 @@ var GameModel = (function() {
   GameModel.prototype.movePiece = function(sx, sy, x, y) {
     console.log('here');
     this.$$piece = {x: x, y: y};
+    this.$$store.setItem('pieces', this.$$piece);
     this.$$generateInitialBoard();
   };
 
