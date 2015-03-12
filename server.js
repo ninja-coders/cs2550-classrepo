@@ -27,6 +27,7 @@ app.get('/test', function(req, rest) {
 });
 
 app.use(express.static(__dirname));
+app.use(express.cookieParser());
 
 server.listen(3000, function() {
   var host = server.address().address;
