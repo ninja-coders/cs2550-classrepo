@@ -26,13 +26,25 @@ app.get('/', function(req, res) {
 app.get('/login', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.cookie('username', 'login');
-  res.send(req.cookies);
+  res.send('ok');
 });
 
 app.get('/logout', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.clearCookie('username');
-  res.send(req.cookies);
+  res.send('ok');
+});
+
+app.get('/reset', function(req, res) {
+  var initialValue = {
+    boardSize: 8,
+    pieces: {
+      x: 2,
+      y: 2
+    }
+  };
+  res.cookie('gameBoard', initialValue);
+  res.send('ok');
 });
 
 app.use(express.static(__dirname));
