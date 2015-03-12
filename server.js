@@ -1,4 +1,5 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
@@ -16,18 +17,25 @@ io.on('connection', function(socket) {
   })
 });
 
+app.use(cookieParser());
 app.get('/', function(req, res) {
   console.log('Index request');
   res.redirect('/overview.html');
 });
 
-app.get('/test', function(req, rest) {
+app.get('/login', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.cookie('username', 'login');
+  res.send(req.cookies);
+});
 
-  res.end();
+app.get('/logout', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.clearCookie('username');
+  res.send(req.cookies);
 });
 
 app.use(express.static(__dirname));
-app.use(express.cookieParser());
 
 server.listen(3000, function() {
   var host = server.address().address;
