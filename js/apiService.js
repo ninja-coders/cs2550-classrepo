@@ -7,7 +7,7 @@ var ApiService = (function() {
 
   function ApiService() {
     this.$$store = new StorageService('api');
-    this.$$store.$$init();
+    this.$$store.init();
   }
 
   ApiService.prototype.$$createRequest = function(success, error, key) {
