@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="games.xsl"?>
+<!DOCTYPE games SYSTEM "games.dtd">
+<games>
+  <description>Here we go</description>
+  <game>
+    <name>Checkers</name>
+    <score>23</score>
+    <description>Here we are</description>
+  </game>
+  <game>
+    <name>Chess</name>
+    <score>32</score>
+    <description>Not done yet</description>
+  </game>
+  <game>
+    <name>Checkers</name>
+    <score>24</score>
+    <description>Red Wins</description>
+  </game>
+  <game>
+    <name>Checkers</name>
+    <score>13</score>
+    <description>2 more black than red</description>
+  </game>
+  <game>
+    <name>Checkers</name>
+    <score>18</score>
+    <description>Red Wins</description>
+  </game>
+  <game>
+    <name>Checkers</name>
+    <score>39</score>
+    <description>It was a tie</description>
+  </game>
+  <game>
+    <name>Chess</name>
+    <score>64</score>
+    <description>8 queens win</description>
+  </game>
+  <game>
+    <name>Chess</name>
+    <score>16</score>
+    <description>Pawn for the Win</description>
+  </game>
+  <game>
+    <name>Chess</name>
+    <score>3</score>
+    <description>That was fast</description>
+  </game>
+  <game>
+    <name>Chess</name>
+    <score>103</score>
+    <description>Now this was a game!</description>
+  </game>
+</games>

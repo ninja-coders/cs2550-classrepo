@@ -1,0 +1,5 @@
+<!ELEMENT games (game)>
+<!ELEMENT game (name, description, score)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT score (#PCDATA)>
