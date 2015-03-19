@@ -1,0 +1,156 @@
+[
+    {
+        "root": "06121",
+        "id": "06121",
+        "name": "Botanic Gardens Bldg B",
+        "lat": 42.382965,
+        "lng": -71.12541
+    },
+    {
+        "root": "06123",
+        "id": "06123",
+        "name": "Botanic Gardens Bldg D",
+        "lat": 42.382561,
+        "lng": -71.126036
+    },
+    {
+        "root": "06127",
+        "id": "06127",
+        "name": "Botanic Gardens Bldg H",
+        "lat": 42.3826,
+        "lng": -71.126917
+    },
+    {
+        "root": "06128",
+        "id": "06128",
+        "name": "Botanic Gardens Bldg I",
+        "lat": 42.382523,
+        "lng": -71.127029
+    },
+    {
+        "root": "06069",
+        "id": "275",
+        "name": "1607-1615 Massachusetts Avenue",
+        "lat": 42.380148,
+        "lng": -71.119656
+    },
+    {
+        "root": "04275",
+        "id": "327",
+        "name": "34 Kirkland Street",
+        "lat": 42.37652,
+        "lng": -71.113047
+    },
+    {
+        "root": "06170",
+        "id": "440A",
+        "name": "5A Sacramento Street",
+        "lat": 42.383064,
+        "lng": -71.118749
+    },
+    {
+        "root": "00470",
+        "id": "495",
+        "name": "Kittredge Hall - Hu Press",
+        "lat": 42.383031,
+        "lng": -71.127026
+    },
+    {
+        "root": "03243",
+        "id": "500C",
+        "name": "Daniels Hall, Currier House",
+        "lat": 42.381375,
+        "lng": -71.125283
+    },
+    {
+        "root": "03227",
+        "id": "510E",
+        "name": "Eliot Hall, Cabot House",
+        "lat": 42.381034,
+        "lng": -71.12343
+    },
+    {
+        "root": "03222",
+        "id": "510I",
+        "name": "107 Walker Street, Cabot House",
+        "lat": 42.381885,
+        "lng": -71.123312
+    },
+    {
+        "root": "03302",
+        "id": "520B",
+        "name": "Faculty Row, Pforzheimer House",
+        "lat": 42.382494,
+        "lng": -71.125214
+    },
+    {
+        "root": "03304",
+        "id": "520D",
+        "name": "Jordan South, Pforzheimer House",
+        "lat": 42.381246,
+        "lng": -71.122832
+    },
+    {
+        "root": "03306",
+        "id": "520E",
+        "name": "Pforzheimer Master's Residence",
+        "lat": 42.382758,
+        "lng": -71.124709
+    },
+    {
+        "root": "03307",
+        "id": "520H",
+        "name": "Wolbach Hall, Pforzheimer House",
+        "lat": 42.382183,
+        "lng": -71.124246
+    },
+    {
+        "root": "02582",
+        "id": "561",
+        "name": "Hastings Hall",
+        "lat": 42.377466,
+        "lng": -71.119534
+    },
+    {
+        "root": "06175",
+        "id": "596A",
+        "name": "27 Everett Street Garage",
+        "lat": 42.380314,
+        "lng": -71.117667
+    },
+    {
+        "root": "04196",
+        "id": "665F",
+        "name": "Observatory Garage",
+        "lat": 42.382076,
+        "lng": -71.128649
+    },
+    {
+        "root": "06131",
+        "id": "749",
+        "name": "21 Robinson Street",
+        "lat": 42.383677,
+        "lng": -71.12662
+    },
+    {
+        "root": "03341",
+        "id": "965",
+        "name": "3 Sacramento Street at Dudley House",
+        "lat": 42.382769,
+        "lng": -71.119099
+    },
+    {
+        "root": "04270",
+        "id": "998",
+        "name": "20 Garden Street",
+        "lat": 42.377629,
+        "lng": -71.123468
+    },
+    {
+        "root": "04553",
+        "id": "N4553",
+        "name": "155 Fawcett Street",
+        "lat": 42.392937,
+        "lng": -71.148864
+    }
+]
