@@ -2,3 +2,4 @@
 *.orig
 *.log
 node_modules
+sound/sound.mp3
