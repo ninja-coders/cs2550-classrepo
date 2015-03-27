@@ -148,6 +148,7 @@ var GameView = (function() {
 })();
 
 $().ready(function() {
+  $('gameCanvas').style.display = 'none';
   var controller = new GameController();
 
   controller.init();

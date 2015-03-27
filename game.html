@@ -23,8 +23,9 @@
 
   <div class="container">
     <div class="gameWindow">
-      <div id="gameBoard">
-      </div>
+      <div id="gameBoard"></div>
+      <canvas id="gameCanvas" width="320" height="320"></canvas>
+      <audio id="sound" src="sound/sound.mp3"></audio>
       <button id="increase">Increase</button>
       <div id="yodaResponse">Here is wisdom...</div>
     </div>
@@ -57,7 +58,7 @@
   <script src="js/storageService.js"></script>
   <script src="js/apiService.js"></script>
 
-  <script src="js/zertzView.js"></script>
+  <script src="js/zertzViewCanvas.js"></script>
   <script src="js/zertzModelCookie.js"></script>
   <script src="js/zertzController.js"></script>
   <script src="js/chat.js"></script>
