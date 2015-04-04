@@ -3,6 +3,8 @@ var cookieParser = require('cookie-parser');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
+var fs = require('fs');
+var path = require('path');
 
 io.on('connection', function(socket) {
   console.log('New socket connected');
@@ -45,6 +47,13 @@ app.get('/reset', function(req, res) {
   };
   res.cookie('gameBoard', initialValue);
   res.send('ok');
+});
+
+app.get('/cache.manifest', function(req, res) {
+  var filePath = path.join(__dirname, 'cache.manifest');
+  var readStream = fs.createReadStream(filePath);
+  res.header('Content-Type', 'text/cache-manifest');
+  readStream.pipe(res);
 });
 
 app.use(express.static(__dirname));
