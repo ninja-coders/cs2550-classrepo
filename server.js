@@ -56,7 +56,7 @@ app.get('/cache.manifest', function(req, res) {
   readStream.pipe(res);
 });
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, { maxAge: "-1" }));
 
 server.listen(3000, function() {
   var host = server.address().address;
