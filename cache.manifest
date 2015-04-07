@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# Version: 4
+
+CACHE:
+/todo/todo.html
+/todo/todo.js
+/todo/todo.css
+
+# NETWORK:
+# *
+# /chatapi
+
+# FALLBACK:
+# /chatapi   /offline.html

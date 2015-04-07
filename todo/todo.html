@@ -1,0 +1,50 @@
+<html manifest='/cache.manifest'>
+  <head>
+    <title>Todo</title>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <header>
+      <h1>Todos</h1>
+    </header>
+
+    <div id="listDiv">
+      <form id="listform" action="completetask">
+        <div id="list">
+          <div class="todoitem">
+            <input type="checkbox" class="taskcheck" value="1"></input>
+            <span class="title">This is the first task</span>
+            <span class="description"></span>
+          </div>
+          <div class="todoitem">
+            <input type="checkbox" class="taskcheck" value="2"></input>
+            <span class="title">This is task number 2</span>
+            <span class="description"></span>
+          </div>
+          <div class="todoitem">
+            <input type="checkbox" class="taskcheck" value="3"></input>
+            <span class="title">This is a very long named task that might require wrapping</span>
+            <span class="description"></span>
+          </div>
+          <div class="todoitem">
+            <input type="checkbox" class="taskcheck" value="4"></input>
+            <span class="title">Task 4</span>
+            <span class="description"></span>
+          </div>
+        </div>
+        <input id="updatebutton" type="submit" value="Update"></input>
+      </form>
+    </div>
+
+    <div id="new">
+      <form action="addtask" id="taskform">
+        <span>New Task: </span>
+        <input type="text" id="newtask"></input>
+        <textarea id="newtaskdesc" class="descriptioninput"></textarea>
+        <input type="submit" id="createnew" value="Add"></input>
+      </form>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>

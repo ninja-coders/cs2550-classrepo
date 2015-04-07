@@ -1,0 +1,151 @@
+/*
+ *
+ * Default to mobile first
+ *
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+header {
+  padding: 10px 0;
+  color: rgba(175, 47, 47, 0.5);
+}
+
+header h1 {
+  text-align: center;
+}
+
+#listDiv {
+  width: 300px;
+  margin: 0 auto 30px auto;
+}
+
+#listDiv form {
+  margin: auto;
+}
+
+#list {
+  border: solid 1px #cdcdcd;
+  border-bottom: none;
+  width: 300px;
+}
+
+.todoitem {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.todoitem input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2px;
+  margin auto 0;
+  width: 20px;
+  height: 25px;
+}
+
+.todoitem .title {
+  display: block;
+  position: relative;
+  padding: 5px 25px 5px 5px;
+  margin-left: 20px;
+}
+
+.description {
+  display: none;
+}
+
+.descriptionInput {
+  display: none;
+}
+
+#new {
+  width: 300px;
+  border: 1px solid #cdcdcd;
+  margin: auto;
+}
+
+#new form {
+  padding: 5px;
+  margin: auto;
+}
+
+/*
+ *
+ * Tablet View
+ *
+ */
+@media only screen
+  and (min-width: 800px)
+{
+  .description {
+    display: block;
+    margin-left: 25px;
+    font-style: italic;
+  }
+
+  .descriptionInput {
+    display: block;
+    width: 780px;
+    margin: 5px auto 5px auto;
+  }
+
+  #listDiv {
+    width: 800px;
+  }
+
+  #list {
+    width: 800px;
+  }
+
+  .todoitem {
+    width: 800px;
+  }
+
+  .todoItem .title {
+    display: block;
+    position: relative;
+    padding: 5px 25px 5px 5px;
+    margin-left: 20px;
+  }
+
+  #new {
+    width: 800px;
+  }
+}
+
+/*
+ *
+ * Laptop View
+ *
+ */
+@media only screen
+  and (min-width: 1025px)
+{
+  .descriptionInput {
+    width: 1000px;
+  }
+
+  #listDiv {
+    width: 1024px;
+  }
+
+  #list {
+    width: 1024px;
+  }
+
+  .todoitem {
+    width: 1024px;
+  }
+
+  #new {
+    width: 1024px;
+  }
+
+}
