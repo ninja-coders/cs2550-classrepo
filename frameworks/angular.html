@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular</title>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/myangular.js"></script>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="appController">
+    <h1>{{Title}}</h1>
+
+    <h1>{{Response}}</h1>
+
+    <button ng-click="sayHi()">Say Hi</button>
+
+
+    <p style="font-size: 8pt" ng-hide="hideCount">{{count}}</p>
+  </div>
+
+
+</body>
+</html>
