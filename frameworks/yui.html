@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YUI</title>
+  <script src="lib/yui/yui/yui.js"></script>
+  <script src="js/myyui.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+  <div id="tabDiv">
+    <ul>
+      <li><a href="#one">Calc</a></li>
+      <li><a href="#two">Auto</a></li>
+      <li><a href="#three">Cal</a></li>
+    </ul>
+
+    <div>
+      <div id="one">
+        <h1 id="mainTitle">Hello</h1>
+        <button id="testMe">Try It</button>
+
+        <form>
+          <input type="text" name="num" id="num1">
+          <input type="text" name="num2" id="num2">
+          <button id="add">Add</button>
+        </form>
+
+        <div id="calculatedValue">
+        </div>
+      </div>
+      <div id="two">
+        <!-- Auto Complete -->
+        <form id="autoForm">
+          <input type="text" id="autoTest" />
+          <input type="submit" style="visibility: hidden" />
+        </form>
+        <div id="autoResult"></div>
+      </div>
+      <div id="three">
+        <!-- Calendar -->
+        <div id="calendar"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

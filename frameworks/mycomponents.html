@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Components</title>
+
+  <link rel="import" href="lib/polymer/polymer/polymer.html">
+
+  <polymer-element name="my-element" noscript>
+    <template>
+      <span>Hello from <b>Polymer!</b></span>
+    </template>
+  </polymer-element>
+
+  <polymer-element name="hello-world" attributes="owner">
+    <template>
+      <span>Hello <b>{{owner}}</b></span>
+    </template>
+    <script>
+      Polymer({
+        owner: "Mike"
+      });
+    </script>
+  </polymer-element>
+
+  <polymer-element name="my-calc" attributes="operation">
+    <template>
+      <input type="text" value="{{num1}}"></input>
+      <input type="text" value="{{num2}}"></input>
+      <span>{{result}}</span>
+    </template>
+    <script>
+      Polymer({
+        num1: 0,
+        num2: 0,
+        result: 0,
+        operation: function(num1, num2) {
+          return num1 + num2;
+        },
+        observe: {
+          num1: 'runOperation',
+          num2: 'runOperation'
+        },
+        runOperation: function() {
+          var num1 = parseInt(this.num1);
+          var num2 = parseInt(this.num2);
+          this.result = this.operation(num1, num2);
+        }
+      });
+    </script>
+  </polymer-element>
+
+</head>
+<body>
+
+  <my-element></my-element>
+  <hello-world></hello-world>
+  <hello-world owner="Frank"></hello-world>
+
+  <my-calc></my-calc>
+
+
+  <!-- Native WebComponents -->
+  <template id="myTemplate">
+    <p>Hello There, WebComponents<p>
+
+    <script>
+      //alert('Hi');
+    </script>
+  </template>
+  <div id="holder"></div>
+  <script>
+    var template = document.getElementById("myTemplate");
+    var clone = document.importNode(template.content, true);
+    document.getElementById("holder").appendChild(clone);
+  </script>
+
+
+</body>
+</html>
