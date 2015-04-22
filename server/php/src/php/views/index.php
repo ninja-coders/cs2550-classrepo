@@ -1,12 +1,10 @@
 <?php
-  //require_once __DIR__ . "/../global.php";
+  require_once __DIR__ . "/../globals.php";
+  require_once __DIR__ . "/../model/User.php";
+
+  $data = User::getUserByUsername("mikewright");
+
+  include("partials/header.php");
+  include("partials/indexpartial.php");
+  include("partials/footer.php");
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello</title>
-  </head>
-  <body>
-    <h1><?php echo "Hello"; ?></h1>
-  </body>
-</html>
